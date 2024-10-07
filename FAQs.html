@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaksha FAQs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f8f9fa; /* Light background color */
+            color: #343a40; /* Dark text color */
+        }
+        /* Section Styles */
+        .section {
+            margin: 20px auto;
+            max-width: 1000px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #000000;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        /* FAQ Styles */
+        .faq {
+            margin-bottom: 20px;
+        }
+
+        .faq h3 {
+            color: #000000;
+            cursor: pointer;
+            margin: 0;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+
+        .faq p {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 1s ease-out , opacity 0.2s ease-out; /* Transition for height and opacity */
+            padding: 0 10px; /* Add padding for aesthetics */
+        }
+
+        .faq.active p {
+            max-height: 200px; /* Set a reasonable max-height */
+            opacity: 1;
+            padding: 10px; /* Add padding when visible */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .section {
+                padding: 15px;
+            }
+
+            .faq h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="section" id="faqs">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+        <h3>What services does Kaksha offer?</h3>
+        <p>Kaksha offers personalized counseling, resume writing, interview preparation, and career workshops to help you achieve your career goals.</p>
+    </div>
+    <div class="faq">
+        <h3>How can I book a counseling session?</h3>
+        <p>You can book a counseling session through our website by navigating to the counseling section and selecting a convenient time slot.</p>
+    </div>
+    <div class="faq">
+        <h3>Are the workshops conducted online or in-person?</h3>
+        <p>We offer both online and in-person workshops to accommodate your preferences and availability.</p>
+    </div>
+    <div class="faq">
+        <h3>What is the fee structure for your services?</h3>
+        <p>Our fee structure varies based on the service. Please visit the specific service page for detailed information on pricing.</p>
+    </div>
+    <div class="faq">
+        <h3>Can I get a refund if I am not satisfied with the service?</h3>
+        <p>Yes, we offer a refund policy. Please refer to our refund policy page for more details.</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqs = document.querySelectorAll('.faq');
+
+        faqs.forEach(faq => {
+            faq.querySelector('h3').addEventListener('click', () => {
+                // Close all other FAQs
+                faqs.forEach(otherFaq => {
+                    if (otherFaq !== faq) {
+                        otherFaq.classList.remove('active');
+                    }
+                });
+                // Toggle the clicked FAQ
+                faq.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ser.css">
+    <title>Sign Up - Career Counseling Services</title>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Create Your Account</h2>
+        <form id="signup-form" action="#" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="Index.html">Log in here.</a></p>
+    </div>
+    <script>
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/;
+            const uppercaseRegex = /[A-Z]/;
+    
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return false; // Prevent form submission
+            }
+    
+            // Check if password is at least 8 characters long
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false; // Prevent form submission
+            }
+    
+            // Check if password contains at least one special character
+            if (!specialCharacterRegex.test(password)) {
+                alert("Password must contain at least one special character.");
+                return false; // Prevent form submission
+            }
+    
+            // Check if password contains at least one uppercase letter
+            if (!uppercaseRegex.test(password)) {
+                alert("Password must contain at least one uppercase letter.");
+                return false; // Prevent form submission
+            }
+    
+            return true; // Allow form submission
+        }
+    </script>
+    
+</body>
+</html>

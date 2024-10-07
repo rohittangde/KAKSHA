@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ 
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #4da6ffcd;
+    position: relative;
+}
+
+.logo img {
+    max-height: 50px; /* Adjust logo size */
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 3px 0;
+}
+
+.close-menu {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+@media (max-width: 750px) {
+    .nav-links {
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        right: 0;
+        background: #9c9c9c7a;
+        backdrop-filter: blur(10px);
+        width: 200px; /* Set fixed width */
+        max-height: 0; /* Start with max-height of 0 */
+        overflow: hidden;
+        flex-direction: column;
+        transition: max-height 0.3s ease; /* Smooth transition */
+        height:500px;
+    }
+
+    .nav-links.active {
+        max-height: 500px; /* Allow for expansion */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the hamburger icon */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Adjust margin for mobile view */
+        text-align: center;
+    }
+
+    .close-menu {
+        display: block; /* Show the close button when menu is active */
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <script> 
+document.addEventListener("DOMContentLoaded", function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const closeMenu = document.getElementById('close-menu');
+
+    // Show menu when hamburger icon is clicked
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.add('active');
+        closeMenu.style.display = 'block'; // Show close button
+        mobileMenu.classList.add('hidden'); // Hide hamburger icon
+    });
+
+    // Hide menu when close button is clicked
+    closeMenu.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        closeMenu.style.display = 'none'; // Hide close button
+        mobileMenu.classList.remove('hidden'); // Show hamburger icon
+    });
+    
+    // Close the menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            closeMenu.style.display = 'none'; // Hide close button
+            mobileMenu.classList.remove('hidden'); // Show hamburger icon
+        });
+    });
+});
+
+    
+    </script>
+    
+    
+    <nav class="navbar">
+        <div class="logo"><img src="/Assets/images/kashya-logo2.png" alt="Kashya Logo"></div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a id="home" href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#login">Login</a></li>
+        </ul>
+        <div class="close-menu" id="close-menu" style="display: none;">&#10005;</div> <!-- Close button -->
+    </nav>
+    
+</body>
+</html>

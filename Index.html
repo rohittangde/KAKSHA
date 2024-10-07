@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Career Counseling</title>
+</head>
+<body>
+  <div class="main-container">
+      <!-- Botpress Webchat Scripts -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+  <script src="https://mediafiles.botpress.cloud/fcbb5a3e-52ce-4340-bcbf-3395ed205698/webchat/v2.1/config.js"></script>
+  <!-- Optional Customization -->
+  <script>
+      window.botpressWebChat.init({
+          botId: 'your-bot-id',
+          hostUrl: 'https://cdn.botpress.cloud',
+          messagingUrl: 'https://cdn.botpress.cloud',
+          botName: 'Kaksha',
+          botAvatarUrl: 'https://example.com/your-bot-avatar.png',  // Optional: Custom bot avatar URL
+          // Add other customization options as needed
+      });
+      // Navbar css 
+      document.addEventListener("DOMContentLoaded", function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const closeMenu = document.getElementById('close-menu');
+
+    // Show menu when hamburger icon is clicked
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.add('active');
+        closeMenu.style.display = 'block'; // Show close button
+        mobileMenu.classList.add('hidden'); // Hide hamburger icon
+    });
+
+    // Hide menu when close button is clicked
+    closeMenu.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        closeMenu.style.display = 'none'; // Hide close button
+        mobileMenu.classList.remove('hidden'); // Show hamburger icon
+    });
+    // Close the menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            closeMenu.style.display = 'none'; // Hide close button
+            mobileMenu.classList.remove('hidden'); // Show hamburger icon
+        });
+    });
+});
+  </script>
+    <!-- <nav class="navbar">
+      <div class="logo"><img src="/Assets/images/kashya-logo2.png" alt=""></div>
+      <ul class="nav-links">
+        <li><a id="#home" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav> -->
+    <nav class="navbar">
+      <div class="logo"><img src="/Assets/images/kashya-logo2.png" alt="Kashya Logo"></div>
+      <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </div>
+      <ul class="nav-links">
+          <li><a id="home" href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#login">Login</a></li>
+      </ul>
+      <div class="close-menu" id="close-menu" style="display: none;">&#10005;</div> <!-- Close button -->
+  </nav>
+    <div id="home" class="home-content">
+      <div class="h2-heading-home">
+        <h2 class="main-content">Kaksha Career <span id="spn-of-h2">insights</span></h2>
+        <p class="main-paragraph">For students to <br>Helping you to begin your Career
+          Journey </p>
+        <a href="text.html"><button class="exam-of-8to10">Start the test</button></a>
+      </div>
+      <div class="img-home-section">
+        <img src="/Assets/images/home-poster-1.jpg" alt="" width="200px">
+      </div>
+    </div>
+    <div id="home" class="home-content">
+      <div class="img-home-section d-h">
+        <img src="/Assets/images/poster-2.jpg" alt="" width="200px">
+      </div>
+      <div class="h2-heading-home  mb-device">
+        <h2 class="main-content">Explore With Our Programs</span></h2>
+        <p class="main-paragraph">Courses for learners <br>
+          Explore courses that are in demand </p>
+        <a href="#"><button class="explore-more">Explore More</button></a>
+      </div>
+      <div class="img-home-section mb-device-img">
+        <img src="/Assets/images/poster-2.jpg" alt="" width="200px">
+      </div>
+    </div>
+    <!-- about us  -->
+    <div id="about" class="about-container">
+      <div class="ab-container-item1">
+        <div class="container-item1">
+          <h2 class="about-heading">About Us</h2>
+          <h2 class="about-heading1">Our Mission</h2>
+          <h2 class="about-para1">Making choose the career easily</h2>
+          <p class="about-para2">In <span> Kaksha</span> Project, our mission is to empower students to make informed
+            career choices based on their unique skills, interests, and aspirations. We believe that every student
+            deserves the opportunity to explore their potential and find a fulfilling career path.
+          </p>
+        </div>
+        <div class="about-img">
+          <img src="/Assets/images/about-us.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- Contact Us Page  -->
+    <div id="contact" class="contact-us-main ">
+      <div class="con-main-item1">
+        <div class="con-main-item">
+          <img class="contact-img" src="/Assets/images/Contact-us.jpg" alt="">
+        </div>
+        <form class="form-contact-us" action="/submit" method="POST">
+          <h2 class="con-heading">Contact Us</h2>
+
+          <input type="text" id="name" name="name" placeholder="Enter Your Name" required><br>
+
+
+          <input type="email" id="email" name="email" placeholder="Enter Your Email" required><br>
+
+          <textarea id="message" name="message" rows="4" placeholder="Enter Your Massege" required></textarea><br>
+
+          <button class="send-msg-btn" type="submit">Send Massege</button>
+        </form>
+
+      </div>
+    </div>
+    <!-- Login page -->
+    <div id="login" class="login-container">
+      <div class="login-con-item1">
+        <div class="con-item-form">
+          <div class="login-form-container">
+            <h2 class="login-heading">Login</h2>
+            <form class="login-form" action="your-login-endpoint" method="POST">
+              <input type="text" id="username" name="username" placeholder="Username" required><br>
+              <input type="password" id="password" name="password" placeholder="Password" required><br>
+              <button class="login-btn " type="submit">Login</button><br>
+              <p class="have-account">Don't You have account? <a href="ser.html">Create account</a></p>
+            </form>
+          </div>
+        </div>
+        <div class="image-login">
+          <img src="/Assets/images/login-png.jpg"   alt="Career Counseling" />
+        </div>
+      </div>
+    </div>
+    <!-- <div class="map">
+      <p>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240146.78393017536!2d74.99334277998844!3d19.86982495460938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb9815a369bc63%3A0x712d538b29a2a73e!2sChhatrapati%20Sambhajinagar%20(Aurangabad)%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1727412536871!5m2!1sen!2sin" width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </p>
+     </div> -->
+    <section id="services">
+      <div class="container">
+          <h2>Our Services</h2>
+          <div class="services-wrapper">
+              <div class="service">
+                  <h3>Personalized Career Counseling</h3>
+                  <p>We provide one-on-one counseling sessions to help you identify your strengths, interests, and career goals. Our expert counselors will guide you through the decision-making process.</p>
+              </div>
+              <div class="service">
+                  <h3>Resume and Cover Letter Writing</h3>
+                  <p>Get assistance with crafting a professional resume and cover letter tailored to your desired job. We ensure your application stands out to potential employers.</p>
+              </div>
+              <div class="service">
+                  <h3>Interview Preparation</h3>
+                  <p>Prepare for job interviews with mock interviews and feedback. We'll help you develop the confidence and skills needed to impress potential employers.</p>
+              </div>
+              <div class="service">
+                  <h3>Career Workshops</h3>
+                  <p>Join our workshops to learn valuable skills, such as networking, personal branding, and job search strategies. These interactive sessions will equip you for success.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <footer>
+    <div class="footer-container">
+       
+        <div class="footer-links">
+            <div class="link-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Personalized Counseling</a></li>
+                    <li><a href="#services">Resume Writing</a></li>
+                    <li><a href="#services">Interview Preparation</a></li>
+                    <li><a href="#services">Career Workshops</a></li>
+                </ul>
+            </div>
+            <div class="link-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="link-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="FAQs.html">FAQs</a></li>
+                    <li><a href="policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<p class="foot-p">&copy; 2024 Career Counseling Services. All Rights Reserved.</p>
+</div>
+ 
+</body>
+</html>
